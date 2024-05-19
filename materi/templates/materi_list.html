@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Materi List</title>
+</head>
+<body>
+    <h1>Materi List</h1>
+    <ul>
+        {% for materi in materials %}
+            <li>{{ materi.title }} (Grade {{ materi.get_grade_display }}) - <a href="{{ materi.file.url }}">Download</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'upload_materi' %}">Upload New Materi</a>
+</body>
+</html>
